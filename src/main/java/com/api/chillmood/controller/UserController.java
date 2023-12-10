@@ -1,6 +1,6 @@
 package com.api.chillmood.controller;
 
-import com.api.chillmood.dto.UserDTO;
+import com.api.chillmood.dto.UserDto;
 import com.api.chillmood.entity.User;
 import com.api.chillmood.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ public class UserController {
     }
 
     @PostMapping
-    public User createUser(@RequestBody UserDTO newUser) {
+    public User createUser(@RequestBody UserDto newUser) {
         return userService.createUser(newUser);
     }
 

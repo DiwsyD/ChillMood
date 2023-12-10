@@ -1,19 +1,19 @@
 package com.api.chillmood.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.format.annotation.DateTimeFormat;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @Getter
 @Setter
-public class UserDTO {
+public class UserDto {
     private String name;
     private String gender;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date dateOfBirth;
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private LocalDate dateOfBirth;
 
 }

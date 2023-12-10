@@ -5,20 +5,20 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Map;
 
 @AllArgsConstructor
 @Getter
 @Setter
-public class MoodFormDTO {
+public class CreateMoodFormDto {
 
-    //LogParameterId:MarkId
-    private Map<String, String> LogParametersMarks;
+    //private String userId;
+    private Map<String, String> parameterMarkIds;
     private Integer steps;
     @DateTimeFormat(pattern = "HH:mm")
-    private Date sleepStart;
+    private LocalDate sleepStart;
     @DateTimeFormat(pattern = "HH:mm")
-    private Date sleepEnd;
+    private LocalDate sleepEnd;
     private String Highlights;
 }

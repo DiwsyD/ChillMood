@@ -1,14 +1,13 @@
 package com.api.chillmood.controller;
 
-import com.api.chillmood.dto.MoodFormDTO;
-import com.api.chillmood.entity.MoodForm;
+import com.api.chillmood.dto.CreateMoodFormDto;
+import com.api.chillmood.dto.MoodFormDto;
 import com.api.chillmood.service.MoodFormService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @RestController
 @RequestMapping(path = "api/v1/moodform")
@@ -21,14 +20,35 @@ public class MoodFormController {
         this.moodFormService = moodFormService;
     }
 
-    public MoodForm getMoodForm(Date dayDate) {
+    //https://www.baeldung.com/get-user-in-spring-security
+    @GetMapping
+    public MoodFormDto getMoodFormByDay(@DateTimeFormat(pattern = "yyyy-MM-dd") @RequestParam LocalDate day) {
+        System.out.println("Date: " + day.getClass());
 
-        return moodFormService.getMoodFormByDate(dayDate);
+        return null;
+        //return moodFormService.getMoodFormByDate(userId, dayDate);
+    }
+    //https://www.baeldung.com/get-user-in-spring-security
+    @GetMapping
+    public MoodFormDto getMoodFormByDateRange(
+            @DateTimeFormat(pattern = "yyyy-MM-dd") @RequestParam LocalDate from,
+            @DateTimeFormat(pattern = "yyyy-MM-dd") @RequestParam LocalDate to
+    ) {
+        System.out.printf("From: %tF - To: %tF ", from, to);
+
+        return null;
+        //return moodFormService.getMoodFormByDate(userId, dayDate);
     }
 
-    public MoodForm createMoodForm(@RequestBody MoodFormDTO newMoodForm) {
+    @PostMapping
+    public MoodFormDto createMoodForm(@RequestBody CreateMoodFormDto newMoodForm) {
         //TODO: Test how it works with inner Objects. (list of inner objects)
         return moodFormService.createMoodForm(newMoodForm);
+    }
+
+    @PatchMapping
+    public MoodFormDto updateMoodForm(@RequestBody CreateMoodFormDto newMoodForm) {
+        return null;
     }
 
 }

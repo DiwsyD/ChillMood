@@ -6,7 +6,9 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public class LogParameter {
-
-    private String parameterId;
-    private String markId;
+    /**
+     * LogParameter - One of the user's day parameter (e.g. Mood or Health) and mark of it's parameter.
+     * */
+    private Parameter parameter;
+    private Mark mark;
 }

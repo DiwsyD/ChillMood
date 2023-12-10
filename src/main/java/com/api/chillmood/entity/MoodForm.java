@@ -1,13 +1,12 @@
 package com.api.chillmood.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
-import org.springframework.format.annotation.DateTimeFormat;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
-import java.util.Map;
 
 @Document("MoodForm")
 @Getter
@@ -16,16 +15,18 @@ import java.util.Map;
 @NoArgsConstructor
 @ToString
 public class MoodForm {
-
+    /**
+     * MoodForm - is a filled form of information about the user's day.
+     */
     @MongoId
     private String id;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date date;
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private LocalDate date;
     private List<LogParameter> logParameters;
     private Integer steps;
-    @DateTimeFormat(pattern = "HH:mm")
-    private Date sleepStart;
-    @DateTimeFormat(pattern = "HH:mm")
-    private Date sleepEnd;
+    @JsonFormat(pattern = "HH:mm")
+    private LocalDate sleepStart;
+    @JsonFormat(pattern = "HH:mm")
+    private LocalDate sleepEnd;
     private String Highlights;
 }
