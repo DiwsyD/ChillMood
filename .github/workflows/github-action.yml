@@ -6,7 +6,7 @@ on:
       - Master
     pull_request:
       branches:
-        - Master
+        - '*'
 
 jobs:
   build:
