@@ -3,6 +3,7 @@ package com.api.chillmood.controller;
 import com.api.chillmood.dto.CreateMoodFormDto;
 import com.api.chillmood.dto.MoodFormDto;
 import com.api.chillmood.service.MoodFormService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
@@ -10,24 +11,22 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDate;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping(path = "api/v1/moodform")
 public class MoodFormController {
 
     private final MoodFormService moodFormService;
 
-    @Autowired
-    public MoodFormController(MoodFormService moodFormService) {
-        this.moodFormService = moodFormService;
-    }
 
     //https://www.baeldung.com/get-user-in-spring-security
-    @GetMapping
-    public MoodFormDto getMoodFormByDay(@DateTimeFormat(pattern = "yyyy-MM-dd") @RequestParam LocalDate day) {
-        System.out.println("Date: " + day.getClass());
+//    @GetMapping
+//    public MoodFormDto getMoodFormByDay(@DateTimeFormat(pattern = "yyyy-MM-dd") @RequestParam LocalDate day) {
+//        System.out.println("Date: " + day.getClass());
+//
+//        return null;
+//        //return moodFormService.getMoodFormByDate(userId, dayDate);
+//    }
 
-        return null;
-        //return moodFormService.getMoodFormByDate(userId, dayDate);
-    }
     //https://www.baeldung.com/get-user-in-spring-security
     @GetMapping
     public MoodFormDto getMoodFormByDateRange(
