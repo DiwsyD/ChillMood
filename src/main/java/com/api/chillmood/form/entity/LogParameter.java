@@ -1,4 +1,4 @@
-package com.api.chillmood.entity;
+package com.api.chillmood.form.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

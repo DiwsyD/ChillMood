@@ -1,4 +1,4 @@
-package com.api.chillmood.configuration;
+package com.api.chillmood.config.persistence;
 
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
@@ -13,7 +13,7 @@ import java.util.Collections;
 
 @Configuration
 @EnableMongoRepositories(basePackages = "com.api.chillmood.repository")
-public class MongoConfiguration extends AbstractMongoClientConfiguration {
+public class MongoConfig extends AbstractMongoClientConfiguration {
 
 
     @Override

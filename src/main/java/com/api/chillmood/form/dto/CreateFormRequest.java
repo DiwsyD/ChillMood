@@ -1,24 +1,22 @@
-package com.api.chillmood.dto;
+package com.api.chillmood.form.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 import java.util.Map;
 
-@AllArgsConstructor
-@Getter
-@Setter
-public class CreateMoodFormDto {
+@Builder
+@Data
+public class CreateFormRequest {
 
     //private String userId;
     private Map<String, String> parameterMarkIds;
     private Integer steps;
-    @DateTimeFormat(pattern = "HH:mm")
+    @DateTimeFormat(pattern = "${format.time}")
     private LocalDate sleepStart;
-    @DateTimeFormat(pattern = "HH:mm")
+    @DateTimeFormat(pattern = "${format.time}")
     private LocalDate sleepEnd;
     private String Highlights;
 }
