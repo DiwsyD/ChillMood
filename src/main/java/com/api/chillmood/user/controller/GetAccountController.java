@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(path = "${controller.common.v1}")
+@RequestMapping(path = "${app.api.path.version.v1}")
 @RequiredArgsConstructor
 public class GetAccountController {
 
     private final AccountService accountService;
 
-    @GetMapping(path = "${controller.account.getAccount}")
+    @GetMapping(path = "${app.api.path.account.getAccount}")
     public Account getAccount(@RequestParam(required = false) String name) {
         return accountService.getAccountByName(name);
     }

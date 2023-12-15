@@ -22,7 +22,7 @@ The following guides illustrate how to use some features concretely:
 * [Spring Boot and OAuth2](https://spring.io/guides/tutorials/spring-boot-oauth2/)
 * [Authenticating a User with LDAP](https://spring.io/guides/gs/authenticating-ldap/)
 * [Accessing Data with MongoDB](https://spring.io/guides/gs/accessing-data-mongodb/)
-* [Validation](https://spring.io/guides/gs/validating-form-input/)
+* [Validation](https://spring.io/guides/gs/validating-questionnaire-input/)
 
 ### Docker Compose support
 This project contains a Docker Compose file named `compose.yaml`.

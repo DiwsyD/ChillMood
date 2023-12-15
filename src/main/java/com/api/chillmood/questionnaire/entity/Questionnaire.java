@@ -1,7 +1,8 @@
-package com.api.chillmood.form.entity;
+package com.api.chillmood.questionnaire.entity;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.*;
+import com.api.chillmood.questionnaire.dto.QuestionAnswerIdsDto;
+import lombok.Builder;
+import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -9,18 +10,16 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.time.LocalDate;
 import java.util.List;
 
-@Document("MoodForm")
+@Document("Questionnaire")
 @Data
 @Builder
-public class Form {
-    /**
-     * MoodForm - is a filled form of information about the user's day.
-     */
+public class Questionnaire {
+
     @MongoId
     private String id;
     @DateTimeFormat(pattern = "${format.date}")
     private LocalDate date;
-    private List<LogParameter> logParameters;
+    private List<QuestionAnswerIdsDto> questionAnswerIds;
     private Integer steps;
     @DateTimeFormat(pattern = "${format.time}")
     private LocalDate sleepStart;

@@ -2,18 +2,20 @@ server:
   servlet:
     context-path: /
 
-format:
-  date: "yyyy-MM-dd"
-  time: "HH:mm"
 
-controller:
-  common:
-    v1: "/api/v1"
-  account:
-    getAccount: "/account"
-    createAccount: "account/sign-in"
-  form:
-    getFormByDateRange: "/form/in-range"
-    getFormByDay: "/form/for-date"
-    createForm: "/form/create"
-    updateForm: "/form/update"
+app:
+  api:
+    path:
+      version:
+        v1: "/api/v1"
+      account:
+        getAccount: "/account"
+        createAccount: "account/sign-in"
+      questionnaire:
+        getQuestionnaireByDateRange: "/form/in-range"
+        getQuestionnaireByDay: "/form/for-date"
+        createQuestionnaire: "/form/create"
+        updateQuestionnaire: "/form/update"
+    format:
+      date: "yyyy-MM-dd"
+      time: "HH:mm"

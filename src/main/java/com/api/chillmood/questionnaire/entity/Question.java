@@ -1,22 +1,17 @@
-package com.api.chillmood.form.entity;
-
+package com.api.chillmood.questionnaire.entity;
 
 import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
-@Document("Mark")
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
-public class Mark {
+@Document("Question")
+@Data
+@Builder
+public class Question {
 
     @MongoId
     private String id;
 
     private String title;
     private String description;
-    private String color;
 }
