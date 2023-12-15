@@ -1,18 +1,16 @@
-package com.api.chillmood.form.dto;
+package com.api.chillmood.questionnaire.dto;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
-import java.util.Map;
+import java.util.List;
 
 @Builder
 @Data
-public class CreateFormRequest {
+public class QuestionnaireRequest {
 
-    //private String userId;
-    private Map<String, String> parameterMarkIds;
+    private List<QuestionAnswerIdsDto> questionAnswerIds;
     private Integer steps;
     @DateTimeFormat(pattern = "${format.time}")
     private LocalDate sleepStart;

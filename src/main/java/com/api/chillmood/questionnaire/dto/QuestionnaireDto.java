@@ -1,8 +1,7 @@
-package com.api.chillmood.form.dto;
+package com.api.chillmood.questionnaire.dto;
 
-import com.api.chillmood.form.entity.LogParameter;
-import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.*;
+import lombok.Builder;
+import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
@@ -10,11 +9,11 @@ import java.util.List;
 
 @Builder
 @Data
-public class FormDto {
+public class QuestionnaireDto {
 
     @DateTimeFormat(pattern = "${format.date}")
     private LocalDate date;
-    private List<LogParameter> logParameter;
+    private List<QuestionAnswerDto> questionAnswer;
     private Integer steps;
     private LocalDate sleepStart;
     @DateTimeFormat(pattern = "${format.time}")
